@@ -39,24 +39,22 @@ def count(alg, keysize):
 		t0 = time.clock()
 		alg(key, msg)
 		sum += time.clock() - t0
-	return sum/times
+	return times/sum
 
 times = 100
-msgsize = 1024
 
 if len(sys.argv) > 1:
 	times = int(sys.argv[1])
-	msgsize = int(sys.argv[2])
 
 start = time.clock()	
 fo = open("rawdata", "wb+")
-for msgsize in range(1024, 1024*1024, +1024*8):
-	msg = msgGenerate(msgsize)
-	items = [1/count(hmac_sha224, 224), 1/count(hmac_sha256, 256), 1/count(hmac_sha384, 384), 1/count(hmac_sha512, 512), 1/count(cmac_aes, 128), 1/count(cmac_aes, 192), 1/count(cmac_aes, 256)]
+for msgsize in range(8, 1024+8, +8):
+	msg = msgGenerate(msgsize*1024)
+	items = [msgsize/8, count(hmac_sha224, 224), count(hmac_sha256, 256), count(hmac_sha384, 384), count(hmac_sha512, 512), count(cmac_aes, 128), count(cmac_aes, 192), count(cmac_aes, 256)]
 	for item in items:
 		fo.write("%s\t" %item)
 	fo.write("\n")
-	print msgsize/(1024*8)
+	print msgsize/8
 fo.close()
 print time.clock() - start
 
