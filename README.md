@@ -4,6 +4,7 @@ Your task is to compare the speeds of HMAC and CMAC (Pages 390-391 and 395 of [S
 Consult the general guidelines (also on the course website) for deadlines and regulations.
 	
 The Following is the Python code of the implementation of the method.
+
 For HMAC with SHA-224, SHA-256, SHA-384, SHA-512, the Python code is as follow:
 ```
 def hmac_sha224(key, msg):
@@ -41,6 +42,7 @@ def cmac_aes(key, msg):
 	return time.clock()-start
 ```
 Like HMAC, ``key`` and ``msg`` refers to key and messages used for CMAC-AES repectively, while the function return the time spent for the method as well. We use the 3rd-party library ``CryptoPlus.Cipher.AES`` for Python AES function.
+
 For key Generating and message generating, We use the following code.
 ```
 def keyGenerate(bits):
