@@ -1,7 +1,14 @@
-Task Description
+IS project - Comparing the speed of HMAC and CMAC.
 ====================
-Your task is to compare the speeds of HMAC and CMAC (Pages 390-391 and 395 of [Stallings 2014] respectively). For HMAC please use one of the SHA-2 algorithms as the hash function and for CMAC please use AES. Try to be rigorous in the design of the evaluation processes, in particular the test cases. It should be interesting to experiment with different hash-code sizes for the SHA-2 function and different key sizes for AES. For the ease of demonstration, a Web interface to the evaluation processes is highly desirable. You may reuse free or open source software implementation of the various algorithms. Be sure to give due credits and provide proper references.
-Consult the general guidelines (also on the course website) for deadlines and regulations.
+
+### How to run
+Download the ``speedtest.py``, use Python 2 to compile and run the program. It will generate 8 output files, the description for each file will be print out after the program finished.
+
+For customized arguments, run the program with syntax below:
+```
+$ python speedtest.py [n [msgsize]]
+```
+With ``n`` determines the times the program will run, the default value is 100. ``msgsize`` is the size of bits the program will generate for each random message, the default value is 2048.
 	
 The Following is the Python code of the implementation of the method.
 
