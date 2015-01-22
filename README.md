@@ -6,10 +6,11 @@ Download the ``speedtest.py``, use Python 2 to compile and run the program. It w
 
 For customized arguments, run the program with syntax below:
 ```
-$ python speedtest.py [n [msgsize]]
+$ python speedtest.py [n] [msgsize]
 ```
 With ``n`` determines the times the program will run, the default value is 100. ``msgsize`` is the size of bits the program will generate for each random message, the default value is 2048.
-	
+
+### Implement Code	
 The Following is the Python code of the implementation of the method.
 
 For HMAC with SHA-224, SHA-256, SHA-384, SHA-512, the Python code is as follow:
